@@ -21,7 +21,7 @@ Reconstruction Error </h1>
 </h4>
 
 
-![projects](./imgs/projects.svg)
+![projects](./figure0.pdf)
 
 🌟Paper🌟: 敬请期待
 
