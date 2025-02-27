@@ -10,8 +10,8 @@ Reconstruction Error </h1>
 
 <h4 align="center">
     <p>
-        <a href=#项目背景>项目背景</a> |
-        <a href=#项目介绍>项目介绍</a> |
+        <a href="#Project Overview">Project Overview</a> |
+        <a href="Reproduction Steps">Reproduction Steps</a> |
         <a href=#快速开始>快速开始</a> |
         <a href="#模型列表">模型列表</a> |
         <a href="#Reference">Reference</a> |
@@ -20,40 +20,116 @@ Reconstruction Error </h1>
     <p>
 </h4>
 
+<p align="center">
+<img src="./figure0.jpg" alt="projects" width="600"/>
+</p>
 
-![projects](./figure0.pdf)
+- [ ] [TBD] Release pre-trained models.
+- [x] ~[2025/02/27] Release code.~
+- [x] ~[2025/02/27] Accepted by CVPR 2025.~
+- [x] ~[2024/12/10] Release paper.~
 
-🌟Paper🌟: 敬请期待
 
-🌟Datasets and Checkpoints🌟: 敬请期待
+## <a id="Project Overview"></a>Project Overview
+
+### `ckpt/`
+
+- Stores checkpoints of models.
+
+### `data/`
+
+- DiffusionForensics and self-collected dataset.
+
+### `utils/`
+
+- Helper functions for data preprocessing, metrics, and model initialization.
+    - `augment.py`: Includes weak and strong augmentation strategies.
+    - `metrics.py`: Metrics to evaluate performance.
+    - `network_utils.py`: Initializes FIRE.
+
+### `dataset.py`
+
+- Loads datasets.
+
+### `train.py`
+
+- Trains the FIRE model.
+
+### `eval.py`
+
+- Tests the FIRE model.
+
+## Reproduction Steps
+### 1. Data preparation
+
+Downloads DiffusionForensics [[DIRE ICCV 2023]([https://www.example.com](https://github.com/ZhendongWang6/DIRE))] and our self-collected dataset and put them in `data/`. The datasets are organized as follows:
+
+```bash
+data/DiffusionForensics/
+└── train/test
+    ├── imagenet
+    │   ├── real
+    │   │   └──img0.png...
+    │   ├── adm
+    │   │   └──img0.png...
+    │   ├── ...
+    └── lsun_bedroom
+        ├── real
+        │   └──img0.png...
+        ├── adm
+        │   └──img0.png...
+        ├── ...
 
 
-## 项目背景
-尽管目前千亿级别大语言模型拥有强大的能力，然而在金融领域的实际部署和应用中存在以下问题：
-1、在对百万级文档打标签场景下面临高推理成本和慢响应时间问题。
-2、复杂专业任务如细粒度金融文本情感分类时，千亿级别LLM性能如果不经微调其性能不如BERT等专门的小型模型好。
-3、面对涉及超大规模文本数据集的任务：如检索与主题建模，LLM受限于窗口大小和推理成本没有成熟的解决方案。
-4、模型维护和适配成本高：如大量私有领域数据如何高效利用来提高模型性能、模型内部知识更新，tokenizer如何适配金融领域。
-5、私有化部署和用户数据隐私问题。
+data/fake-inversion/
+└── train/test
+    ├──  dalle3
+    │    ├── 0_real
+    │    │   └──img0.png...
+    │    └── 1_fake
+    │        └──img0.png...
+    ├── kandinsky3
+    │    ├── 0_real
+    │    │   └──img0.png...
+    │    └── 1_fake
+    │        └──img0.png...
+    ├──  midjourney
+    │    ...
+    ├──  sdxl
+    │    ...
+    └──  vega
+         ...
+```
 
-基于0.1Ｂ参数量的FinBERT2可以缓解上述问题：
-1、轻量化，降低成本：在对百万级文档打标签场景下，模型内部知识更新、重新训练，向量数据库构建等场景下高效推理或训练。
-2、大规模领域训练，更高性能：虽然没有直接写提示词方便，但是下游领域任务性能得到普遍提升。
-3、广泛的任务适用：除了传统的分类任务，还可经过对比学习微调用于检索任务和主题建模任务。
+### 2. Setup
 
-## 项目介绍
+```bash
+pip install -r requirements.txt
+```
 
-FinBERT2-Suits 是熵简科技基于丰富的金融领域数据开发的面向中文金融文本处理定制的BERTs套件，在金融文本分类、检索、主题建模上拥有更好的性能。相比四年前熵简科技发布的[FinBERT1](https://github.com/valuesimplex/FinBERT)，我们有如下升级：
-###  🧱更开源的金融领域数据集(Fin-datasets)
-- 包含研报、新闻、公告等丰富的金融领域无监督语料
-- 各种金融领域下游任务数据集
-###  🏆深度定制的基座模型
-- 分词器(Fin-tokenizer)和基座模型(Fin-RoBERTa)在60B金融文本语料上预训练
-### 🌐 更广阔的下游任务适配
-- 涵盖基于BERT架构的各种金融领域下游任务:
-  - 🔢 包含sequence/token classification在内的多种分类任务 (Fin-labeler)
-  - 📚  适用于 RAG的检索任务 (Fin-retriever)
-  - 🗃️ 主题建模任务 (Fin-topicer)
+### 3. **Training**
+
+Then, to train the FIRE model, please run:
+
+```bash
+# train on DiffusionForensics
+./train_df.sh
+
+# train on self-collected dataset
+./train_fi.sh
+```
+
+### 4. **Evaluation**
+
+To evaluate the FIRE model, please run:
+
+```bash
+# test on DiffusionForensics
+./test_df.sh
+# test on self-collected dataset
+./test_fi.sh
+```
+
 
 ## File Structure
 ```shell
