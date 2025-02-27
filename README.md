@@ -59,10 +59,10 @@ Reconstruction Error </h1>
 
 - Tests the FIRE model.
 
-## Reproduction Steps
+## <a id="Reproduction Steps"></a>Reproduction Steps
 ### 1. Data preparation
 
-Downloads DiffusionForensics [[DIRE ICCV 2023]([https://www.example.com](https://github.com/ZhendongWang6/DIRE))] and our self-collected dataset and put them in `data/`. The datasets are organized as follows:
+Downloads [DiffusionForensics](https://github.com/ZhendongWang6/DIRE) [DIRE, ICCV 2023] and our self-collected dataset and put them in `data/`. The datasets are organized as follows:
 
 ```bash
 data/DiffusionForensics/
