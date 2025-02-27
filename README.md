@@ -1,7 +1,8 @@
-<h1 align="center">⚡️FinBERT2-Suits:中文金融文本处理定制BERTs套件 </h1>
+<h1 align="center">🔥FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided
+Reconstruction Error </h1>
 <p align="center">
-    <a href="https://github.com/mengyougithub/FinBERT2-Suits">
-        <img alt="Build" src="https://img.shields.io/badge/FinBERT2--Suits-🤗-yellow">
+    <a href="https://arxiv.org/abs/2412.07140">
+        <img alt="Arxiv" src="https://img.shields.io/badge/arXiv-2412.07140-b31b1b.svg">
     </a>
     <a href="https://github.com/mengyougithub/FinBERT2-Suits/blob/master/LICENSE">
         <img alt="License" src="https://img.shields.io/badge/LICENSE-MIT-green">
@@ -89,4 +90,4 @@ FinBERT2-Suits 是熵简科技基于丰富的金融领域数据开发的面向�
 }
 ```
 ## License
-基于[MIT License](LICENSE)开源协议。
+Based on [MIT License](LICENSE) open source license.
