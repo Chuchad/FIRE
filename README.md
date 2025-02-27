@@ -12,9 +12,7 @@ Reconstruction Error </h1>
     <p>
         <a href="#Project Overview">Project Overview</a> |
         <a href="#Reproduction Steps">Reproduction Steps</a> |
-        <a href=#快速开始>快速开始</a> |
-        <a href="#模型列表">模型列表</a> |
-        <a href="#Reference">Reference</a> |
+        <a href=#Acknowledgments>Acknowledgments</a> |
         <a href="#citation">Citation</a> |
         <a href="#license">License</a> 
     <p>
@@ -32,37 +30,37 @@ Reconstruction Error </h1>
 
 ## <a id="Project Overview"></a>Project Overview
 
-### `ckpt/`
+#### `ckpt/`
 
 - Stores checkpoints of models.
 
-### `data/`
+#### `data/`
 
 - DiffusionForensics and self-collected dataset.
 
-### `utils/`
+#### `utils/`
 
 - Helper functions for data preprocessing, metrics, and model initialization.
     - `augment.py`: Includes weak and strong augmentation strategies.
     - `metrics.py`: Metrics to evaluate performance.
     - `network_utils.py`: Initializes FIRE.
 
-### `dataset.py`
+#### `dataset.py`
 
 - Loads datasets.
 
-### `train.py`
+#### `train.py`
 
 - Trains the FIRE model.
 
-### `eval.py`
+#### `eval.py`
 
 - Tests the FIRE model.
 
 ## <a id="Reproduction Steps"></a>Reproduction Steps
 ### 1. Data preparation
 
-Downloads [DiffusionForensics](https://github.com/ZhendongWang6/DIRE) [DIRE, ICCV 2023] and our self-collected dataset and put them in `data/`. The datasets are organized as follows:
+Downloads [DiffusionForensics](https://github.com/ZhendongWang6/DIRE) [DIRE, ICCV 2023] or self-collected dataset and put them in `data/`. The datasets are organized as follows:
 
 ```bash
 data/DiffusionForensics/
@@ -130,40 +128,19 @@ To evaluate the FIRE model, please run:
 ./test_fi.sh
 ```
 
+## <a id="Acknowledgments"></a>Acknowledgments
+Our code is developed based on [DIRE](https://github.com/ZhendongWang6/DIRE) and [FakeInversion](https://fake-inversion.github.io). We appreciate their shared codes and datasets.
 
-## File Structure
-```shell
-.
-├── dataset  # * dataset path
+## <a id="Citation"></a>Citation
 
-└── model  # * 
-    ├── 
-
+If you find our work helpful, please consider citing the following paper:
 ```
-
-## 更新
-- 12/15/2024：创建github项目
-                             |
-
-## Reference:
-我们的套件基于下列开源项目开发，关于更多细节，可以参考原仓库：
-
-1、FlagEmbedding(https://github.com/FlagOpen/FlagEmbedding): 是一个开源项目,旨在开发检索和检索增强的语言模型。
-
-2、SentencePiece (https://github.com/google/sentencepiece): Google开发的无监督文本分词器,用于基于神经网络的文本生成任务。
-
-3、RoBERTa中文预训练模型 (https://github.com/brightmart/roberta_zh): 一个采用RoBERTa方法在大规模中文语料上进行预训练的中文语言模型。
-
-4、BERTopic (https://github.com/MaartenGr/BERTopic): 利用BERT和类TF-IDF来创建可解释的主题模型。
-
-5、FinBERT (https://github.com/valuesimplex/FinBERT): 熵简科技第一代FinBER
-
-## Citation
-
-如果您觉得我们的工作有所帮助，请考虑点个星 :star: 和引用以下论文:
-```
-@misc{
+@article{chu2024fire,
+  title={FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided Reconstruction Error},
+  author={Chu, Beilin and Xu, Xuan and Wang, Xin and Zhang, Yufei and You, Weike and Zhou, Linna},
+  journal={arXiv preprint arXiv:2412.07140},
+  year={2024}
 }
 ```
-## License
-Based on [MIT License](LICENSE) open source license.
+## <a id="License"></a>License
+Based on the [MIT](LICENSE) open source license.
