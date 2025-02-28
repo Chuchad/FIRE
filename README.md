@@ -1,7 +1,7 @@
-<h1 align="center">🔥FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided
+<h1 align="center">🔥 FIRE: Robust Detection of Diffusion-Generated Images via Frequency-Guided
 Reconstruction Error </h1>
 <p align="center">
-    <a href="https://arxiv.org/abs/2412.07140">
+    <a href="https://arxiv.org/abs/2412.07140v2">
         <img alt="Arxiv" src="https://img.shields.io/badge/arXiv-2412.07140-b31b1b.svg">
     </a>
     <a href="https://github.com/mengyougithub/FinBERT2-Suits/blob/master/LICENSE">
