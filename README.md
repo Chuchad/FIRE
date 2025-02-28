@@ -22,9 +22,9 @@ Reconstruction Error </h1>
 <img src="./figure0.jpg" alt="projects" width="600"/>
 </p>
 
+#### 🎊 Accepted by CVPR 2025.
 - [ ] [TBD] Release pre-trained models.
 - [x] ~[2025/02/27] Release code.~
-- [x] ~[2025/02/27] Accepted by CVPR 2025.~
 - [x] ~[2024/12/10] Release paper.~
 
 
