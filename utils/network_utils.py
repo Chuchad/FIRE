@@ -159,7 +159,14 @@ class FIRE_model(nn.Module):
 
         # o = self.resnet(torch.cat(reconstructions_filterd))
         raw_reconstructions_delta = torch.abs(reconstructions_x - x)
-        filtered_reconstructions_delta = torch.abs(reconstructions_middle_filtered - middle_filtered_image)
+        filtered_reconstructions_delta = torch.abs(reconstructions_middle_filtered - x)
+        """
+        ↑↑↑
+        In the proposed design, the reconstruction error after filtering is calculated 
+        using the filtered image and its reconstructed image. In practical experiments, 
+        replacing the reconstructed image with the original image x can accelerate 
+        model convergence and slightly improve performance.
+        """
         o = self.resnet(torch.cat([raw_reconstructions_delta, filtered_reconstructions_delta], dim=1))
 
         return o, middle_freq_image, raw_reconstructions_delta, mask_mid_frq, mask_mid_filterd
