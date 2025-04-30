@@ -21,7 +21,7 @@ class EvalArgs(Tap):
 
     mode: Literal["rgb", "ours", "frq", "fire"] = "ours"
 
-    norm_layer: Literal["batch", "instance"] = "batch"
+    norm_layer: Literal["batch", "instance"] = "instance"
 
     resize: bool = False
 

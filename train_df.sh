@@ -1,5 +1,5 @@
 #!/bin/bash
-export CUDA_VISIBLE_DEVICES=1,
+export CUDA_VISIBLE_DEVICES=0,
 
 # specify the real and fake test directories in '--real_train_dir' and '--fake_train_dir' respectively
 
