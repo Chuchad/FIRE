@@ -118,8 +118,24 @@ pip install -r requirements.txt
 ```
 
 ### 3. **Training**
+We release our pre-trained checkoutpoints (Table 1. in paper) here:
+- [Imagenet with adm](https://drive.google.com/file/d/1bTVrfyUNcjOKFiP1HlvyE9xNqWLhJrGq/view?usp=sharing)
+- [Lsun_bedroom with adm](https://drive.google.com/file/d/1cbaoRMJH9y-reOesTygSvuAU7uz6dNGm/view?usp=sharing)
 
-Then, to train the FIRE model, please run:
+#### 🖥️ Model Training Time (for Reference)
+> **⚙️ Hardware**
+> - **GPU**: Nvidia A100-40G * 1
+> 
+> **🔧 Training Parameters**
+> - **Default values** in the code.
+> 
+> **⏱️ Training Speed**
+> - **~45 minutes** per epoch.
+> 
+> **🎯 Optimal Weights**
+> - Typically found **~20th epoch**.
+
+If you want to train the FIRE model from scratch, please run:
 
 ```bash
 # train on DiffusionForensics
