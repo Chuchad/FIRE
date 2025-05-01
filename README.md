@@ -65,7 +65,7 @@ Reconstruction Error </h1>
 ### 1. Data preparation
 
 Downloads [DiffusionForensics](https://github.com/ZhendongWang6/DIRE) [DIRE, ICCV 2023] or self-collected dataset and put them in `data/`. 
-You can download from urls below:
+You can download our pre-processed version from urls below:
 
 - [DiffusionForensics-imagenet-train](https://drive.google.com/file/d/15vNTwv1S_tQEKu-iNTDfHYj3xCxCmBuD/view?usp=sharing_link)
 - [DiffusionForensics-imagenet-test](https://drive.google.com/file/d/1jvsERmw-XYWnv6mUdHRVg0odEQ3zUN-A/view?usp=share_link)
